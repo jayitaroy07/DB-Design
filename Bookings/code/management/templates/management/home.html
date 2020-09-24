@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking site</title>
+</head>
+<body>
+    <h1>Welcome to Booking
+    &nbsp;&nbsp;&nbsp;&nbsp; 
+    {% if not login %}
+        <a href="/admin/">Login</a>
+    {% else %}
+        <a href="/logout/">Logout</a>
+    {% endif %}</h1>
+    <form action="/">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname">
+        <label for="mname">Middle name:</label>
+        <input type="text" id="mname" name="mname">
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="search">
+      </form> <br>
+      <br>
+      <br>
+    {% if login %}
+    <a href="/add">ADD Contact</a><br>
+    {% endif %}
+    <br>
+
+    {{ count }} results<br>
+    {% if contact_list %}
+    <ul>
+        {% for contact in contact_list %}
+            <li>
+                <a href="/details/{{ contact.contact_id }}">{{ contact.contact_id }}</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                {{ contact.fname }} 
+                {{ contact.mname }}
+                {{ contact.lname }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {% if login %}
+                    <a href="/edit/{{ contact.contact_id }}">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/delete/{{ contact.contact_id }}">Delete</a><br>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <h3>You don't have any contacts...</h3>
+    {% endif %}
+    
+
+<br><br><br><br><br><br>{{ abc }}
+
+</body>
+</html>

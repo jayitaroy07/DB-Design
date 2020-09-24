@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking site</title>
+</head>
+<body>
+    <a href="/">Home</a><br>
+    <h1>{{ contact.fname }} {{ contact.mname }} {{ contact.lname }}</h1>
+    {% if login %}
+    <a href="/edit/{{ contact.contact_id }}">EDIT</a>
+    {% endif %}
+    <br><br><br>
+    Current Address: {{ present_address.address_type }}, {{ present_address.address }}, {{ present_address.city }}, {{ present_address.state }} {{ present_address.zip }}
+    <br>
+    All Addresses:<br>
+    {% for address in address_list %}
+        {{ address.address_type }}, {{ address.address }}, {{ address.city }}, {{ address.state }} {{ address.zip }}<br>
+    {% endfor %}
+    <br><br><br>
+    Current Phone: {{ present_phone.phone_type }}, {{ present_phone.area_code }}-{{ present_phone.number }}
+    <br>
+    All Phones:<br>
+    {% for phone in phone_list %}
+        {{ phone.phone_type }}, {{ phone.area_code }}-{{ phone.number }}<br>
+    {% endfor %}
+    <br><br><br>
+    All Bookings:<br>
+    {% for booking in booking_list %}
+        {{ booking.date_type }}, {{ booking.date | date:"F d, Y" }}
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        {% if login %}
+        <a href='/update_booking/{{ contact.contact_id }}/{{ booking.date_id }}'>update</a><br>
+        {% endif %}
+
+    {% endfor %}
+</body>
+</html>

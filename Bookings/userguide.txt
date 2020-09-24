@@ -1,0 +1,56 @@
+1.  Home Page without login:
+-----------------------------
+> The Home Page shows a login button for user to login. 
+>The Home Page is having a search option, to search based on First name,Middle name or Last name.
+> It also shows the count of records and the records from the contact schema which is basically holding the details of contact_id,fname,mname and name.
+
+Login page
+-----------
+Once you click the login button at Home page, it takes you to login page where you need to give user name and password.
+
+Admin page:
+------------
+Once you logged in, select "VIEW SITE" on the top right of the page, which will take you to Home page.
+
+Home Page after Logged in:
+--------------------------
+> It has a logout option.
+> A search option based on Firstname,Middlename and Last name.
+> A option of "ADD CONTACTS".	
+> A count of all existing records.
+> All the existing records contact id,fname,mname,lastname.
+> For all existing records you have a option of "EDIT" and "DELETE".
+> A hyperlink is been created with each contact id, which will take you to details page.
+
+
+Search operation:
+-----------------
+> You can search based on any or all of the First name,Middle name and Last name.
+> The output will return the records count and records details from contact table.
+
+Details Page:
+---------------
+> If you click the contact_id in the Home page while logged in, it will take you to Details page, where you will get users' phone, address and booking details.
+> We are having EDIT option available in Details page which will allow you to add contacts, phone or booking details.
+> We also have a option to "Update" the bookings only for the users' having booking details.
+> We also have HOME button to take user back to Home page.
+
+Edit Page:
+-----------
+> In this page we have a option to Add Address,Add Phone and Booking details for corresponding user.
+> We have a option to go back to our Home page.
+
+Update Page:
+-------------
+> It allows us to update the Type of Booking and Date for corresponding users already having Booking details.
+> This page also have a option to go back to Details page.
+
+Add Contacts:
+-------------
+> It will give you a form to fill up and add a new contact in the list.
+
+
+
+
+
+ 

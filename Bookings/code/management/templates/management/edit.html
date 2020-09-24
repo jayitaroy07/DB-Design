@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking site</title>
+</head>
+<body>
+    <a href="/">Home</a><br>
+    <h1>{{ contact.fname }} {{ contact.mname }} {{ contact.lname }}</h1>
+    <br><br><br>
+    Current Address: {{ present_address.address_type }}, {{ present_address.address }}, {{ present_address.city }}, {{ present_address.state }} {{ present_address.zip }}
+    <br>
+    All Addresses:<br>
+    {% for address in address_list %}
+        {{ address.address_type }}, {{ address.address }}, {{ address.city }}, {{ address.state }} {{ address.zip }}<br>
+    {% endfor %}<br>
+    <form action="/add_address/{{ contact.contact_id }}">
+        <label for="add_type">Address Type:</label>
+        <input type="text" id="add_type" name="add_type">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state">
+        <label for="zip">Zip:</label>
+        <input type="text" id="zip" name="zip"><br><br>
+        <input type="submit" value="Add Address">
+    </form>
+    <br><br><br>
+    Current Phone: {{ present_phone.phone_type }}, {{ present_phone.area_code }}-{{ present_phone.number }}
+    <br>
+    All Phones:<br>
+    {% for phone in phone_list %}
+        {{ phone.phone_type }}, {{ phone.area_code }}-{{ phone.number }}<br>
+    {% endfor %}<br>
+    <form action="/add_phone/{{ contact.contact_id }}">
+        <label for="phone_type">Phone Type:</label>
+        <input type="text" id="phone_type" name="phone_type">
+        <label for="area_code">Area Code:</label>
+        <input type="text" id="area_code" name="area_code">
+        <label for="number">Phone Number:</label>
+        <input type="text" id="number" name="number"><br><br>
+        <input type="submit" value="Add Phone number">
+    </form>
+    <br><br><br>
+    All Bookings:<br>
+    {% for booking in booking_list %}
+        {{ booking.date_type }}, {{ phone.date }}<br>
+    {% endfor %}
+    <form action="/add_booking/{{ contact.contact_id }}">
+        <label for="date_type">Type of booking:</label>
+        <input type="text" id="date_type" name="date_type">
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date"><br><br>
+        <input type="submit" value="Add Booking">
+    </form>
+</body>
+</html>

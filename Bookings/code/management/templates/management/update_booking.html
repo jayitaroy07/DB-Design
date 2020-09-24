@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking site</title>
+</head>
+<body>
+<a href="/details/{{ contact_id }}">Details</a><br>
+<form action="/change_booking/{{ contact_id }}/{{ date_id }}">
+<label for="date_type">Type of booking:</label>
+<input type="text" id="date_type" name="date_type">
+<label for="date">Date:</label>
+<input type="text" id="date" name="date"><br><br>
+<input type="submit" value="Update Booking">
+</form>
+</body>
+</html>
